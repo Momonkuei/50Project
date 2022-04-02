@@ -8,6 +8,17 @@ $leftBtnHoverColor:rgba(87, 84, 236, 1);
 
 $rightBtnHoverColor:rgba(28, 122, 28, 1);
 
+
+// 寬度變數
+
+$hoverWidth: 75%;
+
+$anotherWidth:25%;
+
+//速度
+
+$speed: 1000ms;
+
 * {
     box-sizing: border-box;
 }
@@ -100,4 +111,39 @@ h1 {
 .split.right .btn:hover {
     background-color: $rightBtnHoverColor;
     border: $rightBtnHoverColor;
+}
+
+.split.left,
+.split.left::before,
+.split.right,
+.split.right::before {
+    transition: all $speed ease;
+}
+
+.hover-left .left {
+    width: $hoverWidth;
+}
+
+.hover-left .right {
+    width: $anotherWidth;
+}
+
+.hover-right .right {
+    width: $hoverWidth;
+}
+
+.hover-right .left {
+    width: $anotherWidth;
+}
+
+@media(max-width:800px) {
+    h1 {
+        top: 25%;
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 1.2rem;
+        width: 12rem;
+    }
 }

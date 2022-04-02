@@ -100,4 +100,39 @@ h1 {
   background-color: #1c7a1c;
   border: #1c7a1c;
 }
+
+.split.left,
+.split.left::before,
+.split.right,
+.split.right::before {
+  -webkit-transition: all 1000ms ease;
+  transition: all 1000ms ease;
+}
+
+.hover-left .left {
+  width: 75%;
+}
+
+.hover-left .right {
+  width: 25%;
+}
+
+.hover-right .right {
+  width: 75%;
+}
+
+.hover-right .left {
+  width: 25%;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    top: 25%;
+    font-size: 2rem;
+  }
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
