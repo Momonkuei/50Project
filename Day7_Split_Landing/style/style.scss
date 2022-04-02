@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$leftBgColor: rgba(87, 84, 236, 0.7);
+
+$rightBgColor: rgba(43, 43, 43, 0.7);
+
+$leftBtnHoverColor:rgba(87, 84, 236, 1);
+
+$rightBtnHoverColor:rgba(28, 122, 28, 1);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #333;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left {
+    left: 0;
+    background: url("https://images.pexels.com/photos/11591876/pexels-photo-11591876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.left::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $leftBgColor;
+}
+
+.split.right {
+    right: 0;
+    background: url("https://images.pexels.com/photos/159369/xbox-xbox-one-microsoft-joystick-159369.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $rightBgColor;
+}
+
+h1 {
+    position: absolute;
+    font-size: 4rem;
+    color: white;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    border: white solid 0.2rem;
+    width: 15rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.split.left .btn:hover {
+    background-color: $leftBtnHoverColor;
+    border: $leftBtnHoverColor;
+}
+
+.split.right .btn:hover {
+    background-color: $rightBtnHoverColor;
+    border: $rightBtnHoverColor;
+}
